@@ -22,6 +22,8 @@
               <center>
                   <h2>Recruitment Contact Form</h2>
               </center>
+              <!-- this code is based on https://gist.github.com/patotoma/8860726 -->
+
               <?php
                 if(isset($_POST['submit'])){
                   $name = htmlspecialchars(stripslashes(trim($_POST['name'])));
@@ -57,7 +59,8 @@
               <textarea name="message" placeholder="Please type your message here"></textarea>
               <p class="error"><?php if(isset($message_error)) echo $message_error; ?></p>
               <input type="submit" name="submit" value="Submit">
-                    <!-- this is the script that will send the above to the target. please edit the target $to = 'target@ibis.org' below -->
+              
+              <!-- this is the script that will send the above to the target. please edit the target $to = 'target@ibis.org' below -->
                 <?php 
                   if(isset($_POST['submit']) && !isset($name_error) && !isset($subject_error) && !isset($email_error) && !isset($message_error)){
                     $to = 'target@ibis.org'; // edit here
