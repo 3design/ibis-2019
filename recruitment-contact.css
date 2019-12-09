@@ -1,0 +1,43 @@
+.form-holder {
+    display: flex;
+    align-content: center;
+    flex-wrap: nowrap;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+}
+.form-holder form {
+    width: 100%;
+    height: auto;
+}
+input {
+    width: 100%;
+}
+textarea {
+    width: 100%;
+    min-height: 150px;
+}
+.form-holder p {
+    display: block;
+    width: 100%;
+    font-size: 1.25em;
+    text-align: center;
+}
+.verify {
+    color: green;
+}
+.error {
+    color: red;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #dadada;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #dadada;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #dadada;
+}

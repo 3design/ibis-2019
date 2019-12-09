@@ -1,0 +1,156 @@
+html * {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+main {
+    top: 80px;
+    position: relative;
+    display: grid;
+    grid-template-areas: "banner" "article" "aside";
+}
+
+h1, h2 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 800 !important;
+}
+
+h2 {
+    font-size: 30px !important;
+}
+
+h3, h4 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700 !important;
+}
+
+h3 {
+    font-size: 22px !important;
+}
+
+h4 {
+    font-size: 17px !important;
+}
+
+p {
+    font-family: "Open Sans", sans-serif;
+    color: rgb(115, 115, 115);
+}
+
+.navbar-custom {
+    background-color: #fff;
+    font-size: 0.93em !important;
+    height: 80px;
+}
+
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: #727272;
+}
+
+/* change the color of active or hovered links */
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    transition: 0.5s;
+    color: #999;
+}
+
+.navbar-custom .nav-item.active .nav-link {
+    color: #33a5f2;
+}
+
+.navbar-brand {
+    padding-left: 8%;
+}
+
+.navbar ul {
+    padding-right: 8%;
+}
+
+.navbar-collapse {
+    flex-direction: row-reverse;
+    background-color: #ffffff;
+}
+.navbar-nav {
+    text-align: center;
+}
+.nav-item {
+    padding-left: 5px;
+    padding-right: 5px;
+    white-space: nowrap;
+}
+
+#navbarDropdownMenuLink-recruiting {
+    color: #F66661;
+}
+#navbarDropdownMenuLink-recruiting:hover {
+    color: rgb(253, 132, 128);
+}
+
+.dropdown-item {
+    color: #727272;
+    font-size: 14.5px;
+}
+
+footer {
+    background-color: rgb(34, 34, 34);
+    height: 220px;
+    position: relative;
+    font-weight: 300;
+}
+
+.flex-container-4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.flex-container-4 div {
+    align-self: flex-start;
+    padding-top: 40px;
+
+}
+
+.col {
+    width: 100%;
+}
+
+#footer-main p {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+}
+
+#footer-bottom {
+    background-color: rgb(0, 0, 0);
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    padding: 13px;
+}
+
+#footer-bottom p {
+    color: rgb(102, 102, 102);
+    font-size: 14px;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    footer {
+        height: 310px;
+    }
+}
+
+.nav-item {
+    white-space: nowrap;
+}

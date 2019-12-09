@@ -1,0 +1,38 @@
+html * {
+	font-family: 'Open Sans', sans-serif;
+}
+
+h2 {
+	color:#F66661;
+	padding-bottom:50px;
+	padding-top:50px;
+}
+
+h4 {
+	color:#000;
+}
+
+.category-container {
+	display: flex;
+	flex-direction: row;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.category-title {
+	flex: 1;
+}
+
+.questions-answers {
+	flex: 3;
+}
+
+.card-body {
+	font-weight: 400 !important;
+	font-size:15px !important;
+	color:#666;
+}
+
+.study-participation {
+	padding-bottom: 50px;
+}

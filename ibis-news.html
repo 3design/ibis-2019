@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IBIS News</title>
+        <link rel="shortcut icon" type="image/png" href="images/ibis-logo-solid-black.png"/>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="nav.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <script src="https://use.fontawesome.com/80bb8e0015.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.1/handlebars.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="ibis-news.css">
+        <script>
+            /*
+                {
+                    img : ,
+                    title : ,
+                    date : ,
+                    source : {
+                        url : ,
+                        name : ,
+                    },
+                    abstract : ,
+                },
+            */
+            var news = [
+                {
+                    img : "images/ibis-logo-navy-outline.png",
+                    title : "Autism Behaviors Show Unique Brain Network Fingerprints in Infants",
+                    date : "13 November 2018",
+                    source : {
+                        url : "https://www.sciencedaily.com/releases/2018/11/181113110321.htm",
+                        name : "Science Daily",
+                    },
+                    abstract : "A new study has identified unique functional brain networks associated with characteristic behaviors of autism spectrum disorder (ASD) in 12- and 24-month old children at risk for developing ASD.",
+                },
+                {
+                    img : "images/spectrumnews-can-a-computer-diagnose-autism.jpg",
+                    title : "Can a Computer Diagnose Autism?",
+                    date : "11 July 2018",
+                    source : {
+                        url : "https://www.spectrumnews.org/features/deep-dive/can-computer-diagnose-autism/",
+                        name : "Spectrum News",
+                    },
+                    abstract : "Some researchers say delays in autism diagnosis could shrink with the rise of machine learning — a technology developed as part of artificial-intelligence research. In particular, they are pinning their hopes on the latest version of machine learning, known as deep learning.",
+                },
+                {
+                    img : "images/umn-fragile-x.jpg",
+                    title : "Fragile X Imaging Study Reveals Differences in Infant Brains",
+                    date : "4 April 2018",
+                    source : {
+                        url : "https://twin-cities.umn.edu/news-events/research-brief-fragile-x-imaging-study-reveals-differences-infant-brains",
+                        name : "UMN",
+                    },
+                    abstract : "For the first time, researchers have used MRIs to show that babies with the neurodevelopmental condition fragile X syndrome had less-developed white matter compared to infants that did not develop the condition. These findings could lead to new and earlier interventions, and potentially better treatment outcomes.",
+                },
+                {
+                    img : "images/mri-scan-art-1.jpg",
+                    title : "Baby Siblings Could Hold Clues to Autism Diagnosis",
+                    date : "17 August 2017",
+                    source : {
+                        url : "https://www.scientificamerican.com/article/baby-siblings-could-hold-clues-to-autism-diagnosis/",
+                        name : "Scientific American",
+                    },
+                    abstract : "Lisa and Eugene Jeffers learned that their daughter Jade, then nearly 2 and a half years old, has autism. The parents were soon engulfed by stress from juggling Jade’s new therapy appointments and wrangling with their health insurance provider, but they now had an infant son to worry about, too. Would Bradley follow in his big sister’s footsteps?",
+                },
+                {
+                    img : "images/nbcnews-brain-scans-could-predict-autism.jpg",
+                    title : "Study: Brain Scans Could Predict Autism in Babies Who Have Autistic Older Siblings",
+                    date : "8 June 2017",
+                    source : {
+                        url : "https://www.nbcnews.com/nightly-news/video/study-brain-scans-could-predict-autism-in-babies-who-have-autistic-older-siblings-963359811954",
+                        name : "NBC News",
+                    },
+                    abstract : "The study focused on 59 infants and correctly predicted nine out of 11 children who were later diagnosed with autism. This is the second brain scan study with similar results.",
+                },
+                {
+                    img : "images/science-daily-predicting-autism.jpg",
+                    title : "Predicting Autism: Study Links Infant Brain Connections to Diagnoses at Age Two",
+                    date : "7 June 2017",
+                    source : {
+                        url : "https://www.sciencedaily.com/releases/2017/06/170607152926.htm",
+                        name : "Science Daily",
+                    },
+                    abstract : "In previous studies, researchers linked infant brain anatomy differences to autism diagnoses at age two. Now they show differences in functional connections between brain regions at 6 months to predict autism at age two.",
+                },
+                {
+                    img : "images/new-scientist-brain-scans-can-predict-autism.jpg",
+                    title : "Baby Brain Scans Can Predict Who is Likely to Develop Autism",
+                    date : "7 June 2017",
+                    source : {
+                        url : "https://www.newscientist.com/article/2133941-baby-brain-scans-can-predict-who-is-likely-to-develop-autism/",
+                        name : "New Scientist",
+                    },
+                    abstract : "A machine-learning algorithm has analyzed brain scans of 6-month-old children and predicted with near-certainty whether they will show signs of autism when they reach the age of 2.",
+                },
+                {
+                    img : "images/ibis-logo-navy-outline.png",
+                    title : "Neuroimaging Technique May Help Predict Autism Among High-Risk Infants",
+                    date : "7 June 2017",
+                    source : {
+                        url : "https://www.nih.gov/news-events/news-releases/neuroimaging-technique-may-help-predict-autism-among-high-risk-infants",
+                        name : "NIH",
+                    },
+                    abstract : "Autism affects roughly 1 out of every 68 children in the United States. Siblings of children diagnosed with autism are at higher risk of developing the disorder. Although early diagnosis and intervention can help improve outcomes for children with autism, there currently is no method to diagnose the disease before children show symptoms.",
+                },
+                {
+                    img : "images/upi-autism-linked-to-increased-cerebrospinal-fluid.jpg",
+                    title : "Autism Linked to Increased Cerebrospinal Fluid in Infants",
+                    date : "6 March 2017",
+                    source : {
+                        url : "https://www.upi.com/Health_News/2017/03/06/Autism-linked-to-increased-cerebrospinal-fluid-in-infants/4301488805865/",
+                        name : "UPI",
+                    },
+                    abstract : "A new study shows increased levels of cerebrospinal fluid in 70 percent of babies at risk of developing autism. The study found toddlers diagnosed with autism at age 2 had a significantly greater amount of CSF at age 6- and 12-months identified based on MRI scans.",
+                },
+                {
+                    img : "images/unchealthcare-autism-linked-to-cereobrospinal-fluid.jpg",
+                    title : "Infant MRIs Show Autism Linked to Increased Cerebrospinal Fluid",
+                    date : "6 March 2017",
+                    source : {
+                        url : "https://healthtalk.unchealthcare.org/infant-mris-show-autism-linked-to-increased-cerebrospinal-fluid/",
+                        name : "UNC Healthcare",
+                    },
+                    abstract : "A national research network led by UNC School of Medicine’s Joseph Piven, MD, found that many toddlers diagnosed with autism at two years of age had a substantially greater amount of extra-axial cerebrospinal fluid (CSF) at six and 12 months of age, before diagnosis is possible. They also found that the more CSF at six months – as measured through MRIs – the more severe the autism symptoms were at two years of age.",
+                },
+                {
+                    img : "images/forbes-ai-predicts-autism.jpg",
+                    title : "AI Predicts Autism By Comparing Babies' Brains",
+                    date : "24 February 2017",
+                    source : {
+                        url : "https://www.forbes.com/sites/janetwburns/2017/02/24/ai-predicts-autism-by-comparing-babies-brains/#edc174864a1f",
+                        name : "Forbes",
+                    },
+                    abstract : "Diagnosing autism spectrum disorder in children is difficult, but that info can give families a wealth of new support options, not to mention a helpful new perspective. Thanks to some infant-focused AI, doctors may soon be able to reach that diagnosis for their little patients at a very early age.",
+                },
+                {
+                    img : "images/the-scientist-infant-brain-scans-predict-autism.jpg",
+                    title : "Infant Brain Scans May Predict Autism Diagnosis",
+                    date : "17 February 2017",
+                    source : {
+                        url : "https://www.the-scientist.com/the-nutshell/infant-brain-scans-may-predict-autism-diagnosis-32006",
+                        name : "The Scientist",
+                    },
+                    abstract : "A computer algorithm can identify the brains of autism patients with moderate accuracy based on scans taken at six months and one year of age.",
+                },
+                {
+                    img : "images/kmov-autism-study-dr-bob-mckinstry.jpg",
+                    title : "Autism Study - Dr. Bob Mckinstry",
+                    date : "16 February 2017",
+                    source : {
+                        url : "https://www.kmov.com/great_day/autism-study---dr-bob-mckinstry/video_b0d0ab6b-4062-52a9-ab3d-12862488d58d.html",
+                        name : "KMOV",
+                    },
+                    abstract : "",
+                },
+                {
+                    img : "images/cnn-autism-predicted-by-infant-brain-changes.jpg",
+                    title : "Autism Predicted by Infant Brain Changes, Study Says",
+                    date : "15 February 2017",
+                    source : {
+                        url : "https://www.cnn.com/2017/02/15/health/autism-brain-changes-mri-early-diagnosis-study/index.html&sa=D&ust=1493123163893000&usg=AFQjCNEyabYzsWK8sUdlIblI2uZPAmidzA",
+                        name : "CNN",
+                    },
+                    abstract : "It may be possible to predict whether an infant will go on to develop autism, researchers say. Overgrowth in brain volume during the first year of life forecasts whether a child at high risk of developing autism spectrum disorder is likely to receive a diagnosis at age 2.",
+                },
+                {
+                    img : "images/quartz-new-method-can-predict-autism.jpg",
+                    title : "A New Method Can Predict Autism in Babies as Young as 12 Months Old",
+                    date : "15 February 2017",
+                    source : {
+                        url : "https://qz.com/910740/a-new-method-can-predict-autism-in-babies-as-young-as-12-months-old/",
+                        name : "Quartz",
+                    },
+                    abstract : "In most cases, autism can’t be diagnosed until children are two years old, but sometimes signs of the condition appear earlier. However, new research (paywall) led by a team of scientists at the University of North Carolina-Chapel Hill suggests there may be a biomarker that would enable doctors to give parents a clear answer about their child’s condition (or lack thereof) and intervene with therapies early on if necessary.",
+                },
+                {
+                    img : "images/edmonton-journal.png",
+                    title : "University of Alberta Part of Team of Researchers to Find Autism Biomarkers in Infancy",
+                    date : "15 February 2017",
+                    source : {
+                        url : "https://edmontonjournal.com/technology/science/university-of-alberta-part-of-team-of-researchers-to-find-autism-biomarkers-in-infancy",
+                        name : "Edmonton Journal",
+                    },
+                    abstract : "Researchers from the University of Alberta were part of an American and Canadian project that was able to identify infants who will be diagnosed with autism at two years of age.",
+                },
+                {
+                    img : "images/philly-study-predicting-autism-by-1.jpg",
+                    title : "Imaging Study Suggests Possibility of Predicting Autism by Age 1",
+                    date : "15 February 2017",
+                    source : {
+                        url : "https://www.philly.com/philly/health/kidshealth/Imaging-study-suggests-possibility-of-diagnosing-autism-by-age-1.html&sa=D&ust=1493123163901000&usg=AFQjCNFGv4QBroyOt6pCeDKy47fcpDZkVA",
+                        name : "Philly",
+                    },
+                    abstract : "A standard type of brain imaging may be able to predict whether babies as young as one year are likely to develop autism, according to a new study that for the first time suggests the possibility of diagnosing the disorder before behavioral symptoms appear a year or two.",
+                },
+                {
+                    img : "images/wustl-brain-network-connections-underlie-autism.jpg",
+                    title : "Brain Network Connections May Underlie Social Behavior Linked to Autism",
+                    date : "9 February 2017",
+                    source : {
+                        url : "https://medicine.wustl.edu/news/brain-network-connections-may-underlie-social-behavior-linked-autism/",
+                        name : "WUSTL",
+                    },
+                    abstract : "Researchers at Washington University School of Medicine in St. Louis and colleagues from the IBIS network used scans to identify brain networks that play a role when a baby sees an object and — by pointing and/or shifting gaze — gets someone else to focus on the object, too. Such behavior is impaired in children with autism. Understanding the links between the brain and this behavior could allow doctors to begin treatment earlier in children at risk for autism spectrum disorder.",
+                },
+            ];
+            function renderItem (item) {
+                var card = $("<div>").append(
+                    $("<div>")
+                        .addClass("card")
+                        .append(
+                            $("<img>")
+                                .addClass("card-img-top")
+                                .attr("src", item.img)
+                                .attr("alt", item.title)
+                        )
+                        .append(
+                            $("<div>")
+                                .addClass("card-body")
+                                .append(
+                                    $("<h4>")
+                                        .addClass("card-title")
+                                        .text(item.title)
+                                )
+                                .append(
+                                    $("<p>")
+                                        .append(
+                                            $("<a>")
+                                                .attr("href", item.source.url)
+                                                .attr("target", "_blank")
+                                                .text(item.source.name)
+                                        )
+                                        .append(
+                                            $("<span>")
+                                                .text(", " + item.date)
+                                        )
+                                )
+                                .append(
+                                    $("<p>")
+                                        .addClass("card-text")
+                                        .text(item.abstract)
+                                )
+                                .append(
+                                    $("<a>")
+                                        .attr("href", item.source.url)
+                                        .attr("target", "_blank")
+                                        .addClass("btn btn-outline-info")
+                                        .text("Read More ")
+                                        .append(
+                                            $("<i>")
+                                                .addClass("fas fa-external-link-alt")
+                                        )
+                                )
+                        )
+                );
+                $(".container").append(card);
+            }
+            window.onload = function () {
+                for (var i=0; i<news.length; ++i) {
+                    renderItem(news[i]);
+                }
+            };
+        </script>
+    </head>
+    <body>
+        <main>
+            <h2><center>IBIS in the News</center></h2>
+            <div class="container">
+            </div>
+
+            <footer>
+                <div>
+                    <div id="footer-main">
+                        <div class="flex-container-4">
+                            <div style="flex: 1">
+                                <img src="images/ibis-logo-white-outline-transparent.png" style="width:90px;">
+                            </div>
+                            <div class="col" style="flex: 3">
+                                <p>This study is funded by the NIH as an Autism Center of Excellence under the “Longitudinal MRI Study of Infants at Risk for Autism”</p>
+                                <p>Grant Number: R01HD055741</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="footer-bottom">
+                        <p>&copy; 2019 IBIS Network</p>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </body>
+</html

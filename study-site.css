@@ -1,0 +1,46 @@
+ul {
+    font-family: "Open Sans", sans-serif;
+}
+
+li {
+    color: rgb(115, 115, 115);
+}
+
+.map {
+    height: 180px;
+}
+
+.header {
+    height: 400px;
+    background-color: rgb(43, 48, 60);
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.header-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        flex-wrap: wrap;
+        padding-top: 5%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        flex-wrap: wrap;
+        padding-top: 5%;
+    }
+}

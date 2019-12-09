@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Publications</title>
+        <link rel="shortcut icon" type="image/png" href="images/ibis-logo-solid-black.png"/>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="nav.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <script src="https://use.fontawesome.com/80bb8e0015.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.1/handlebars.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="publications.css">
+    </head>
+    <body>
+        <main>
+            <h2><center>Publications</center></h2>
+            <p id="pub_id"></p>
+
+            <footer>
+                <div>
+                    <div id="footer-main">
+                        <div class="flex-container-4">
+                            <div style="flex: 1">
+                                <img src="images/ibis-logo-white-outline-transparent.png" style="width:90px;">
+                            </div>
+                            <div class="col" style="flex: 3">
+                                <p>This study is funded by the NIH as an Autism Center of Excellence under the “Longitudinal MRI Study of Infants at Risk for Autism”</p>
+                                <p>Grant Number: R01HD055741</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="footer-bottom">
+                        <p>&copy; 2019 IBIS Network</p>
+                    </div>
+                </div>
+            </footer>
+        </main>
+        <script>
+            var str = "";
+            var i;
+            var articles = [
+                {
+                    "title":"Emerging Executive Functioning and Motor Development in Infants at High and Low Risk for Autism Spectrum Disorder",
+                    "citation":"Front Psychol. 2016 Jul 5;7:1016. doi: 10.3389/fpsyg.2016.01016. eCollection 2016. PMID: 27458411",
+                    "link":"https://www.frontiersin.org/articles/10.3389/fpsyg.2016.01016/full"
+                },
+                {
+                    "title":"Repetitive Behavior in 12-Month-Olds Later Classified with Autism Spectrum Disorder",
+                    "citation":"Elison JT, J Am Acad Child Adolesc Psychiatry. 2014 Nov;53(11):1216-24. doi: 10.1016/j.jaac.2014.08.004. Epub 2014 Sep 3. PMID: 25440311",
+                    "link":"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4254502/"
+                },
+                {
+                    "title":"Accelerating Progress in Autism Through Developmental Research",
+                    "citation":"Nat Rev Neurol. 2014 Aug;10(8):431-2. Doi: 10.1038/nrneurol.2014.126. Epub 2014 Jul 15. PMID: 25023342",
+                    "link":"https://www.nature.com/articles/nrneurol.2014.126"
+                },
+                {
+                    "title":"Network Inefficiencies in Autism Spectrum Disorder at 24 Months",
+                    "citation":"Transl Psychiatry. 2014 May 6;4:e388. doi: 10.1038/tp.2014.24. PMID: 24802306",
+                    "link":"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4035719/"
+                },
+                {
+                    "title":"Development of Cortical Shape in the Human Brain from 6 to 24 Months of Age via a Novel Measure of Shape Complexity",
+                    "citation":"DOI: 10.1016/j.neuroimage.2016.04.053 PMID: 27150231",
+                    "link":"http://europepmc.org/abstract/med/27150231"
+                },
+                {
+                    "title":"Splenium Development and Early Spoken Language in Human Infants",
+                    "citation":"PMID: 26490257",
+                    "link":"http://europepmc.org/abstract/med/26490257"
+                },
+                {
+                    "title":"Altered Corpus Callosum Morphology Associated with Autism Over the First 2 Years of Life",
+                    "citation":"DOI: 10.1093/brain/awv118 PMID: 25937563",
+                    "link":"http://europepmc.org/abstract/med/25937563"
+                },
+                {
+                    "title":"Accurate Age Classification of 6 and 12 Month-Old Infants Based on Resting-State Functional Connectivity Magnetic Resonance Imaging Data",
+                    "citation":"DOI: 10.1016/j.dcn.2015.01.003 PMC: PMC4385423 PMID: 25704288",
+                    "link":"http://europepmc.org/abstract/med/25704288"
+                },
+                {
+                    "title":"Behavioral, Cognitive, and Adaptive Development in Infants with Autism Spectrum Disorder in the First 2 Years of Life",
+                    "citation":"DOI: 10.1186/s11689-015-9117-6 PMC: PMC4511527 PMID: 26203305",
+                    "link":"http://europepmc.org/abstract/med/26203305"
+                },
+                {
+                    "title":"Shape Index Distribution Based Local Surface Complexity Applied to the Human Cortex",
+                    "citation":"DOI: 10.1117/12.2081560 PMC: PMC4449152 PMID: 26028803",
+                    "link":"http://europepmc.org/abstract/med/26028803"
+                },
+                {
+                    "title":"Longitudinal Patterns of Repetitive Behavior in Toddlers with Autism",
+                    "citation":"DOI: 10.1111/jcpp.12207 PMC: PMC4107191 PMID: 24552513",
+                    "link":"http://europepmc.org/abstract/med/24552513"
+                },
+                {
+                    "title":"Diffusion Imaging Quality Control via Entropy of Principal Direction Distribution",
+                    "citation":"DOI: 10.1016/j.neuroimage.2013.05.022 PMC: PMC3798052 PMID: 23684874",
+                    "link":"http://europepmc.org/abstract/med/23684874"
+                },
+                {
+                    "title":"White Matter Microstructure and Atypical Visual Orienting in 7-Month-Olds at Risk for Autism",
+                    "citation":"DOI: 10.1176/appi.ajp.2012.12091150 PMC: PMC3863364 PMID: 23511344",
+                    "link":"http://europepmc.org/abstract/med/23511344"
+                },
+                {
+                    "title":"Frontolimbic Neural Circuitry at 6 Months Predicts Individual Differences in Joint Attention at 9 Months",
+                    "citation":"DOI: 10.1111/desc.12015 PMC: PMC3582040 PMID: 23432829",
+                    "link":"http://europepmc.org/abstract/med/23432829"
+                },
+                {
+                    "title":"Adaptive Prior Probability and Spatial Temporal Intensity Change Estimation for Segmentation of the One-Year-Old Human Brain",
+                    "citation":"DOI: 10.1016/j.jneumeth.2012.09.018 PMC: PMC3513941 PMID: 23032117",
+                    "link":"http://europepmc.org/abstract/med/23032117"
+                },
+                {
+                    "title":"Brain Volume Findings in 6-Month-Old Infants at High Familial Risk For Autism",
+                    "citation":"DOI: 10.1176/appi.ajp.2012.11091425 PMC: PMC3744332 PMID: 22684595",
+                    "link":"http://europepmc.org/abstract/med/22684595"
+                },
+                {
+                    "title":"Differences in White Matter Fiber Tract Development Present From 6 to 24 Months in Infants with Autism",
+                    "citation":"DOI: 10.1176/appi.ajp.2011.11091447 PMC: PMC3377782 PMID: 22362397",
+                    "link":"http://europepmc.org/abstract/med/22362397"
+                },
+                {
+                    "title":"Analysis of Longitudinal Shape Variability via Subject Specific Growth Modeling",
+                    "citation":"PMC: PMC3744241 PMID: 23285617",
+                    "link":"http://europepmc.org/abstract/med/23285617"
+                },
+                {
+                    "title":"Mixed-Effects Shape Models for Estimating Longitudinal Changes in Anatomy",
+                    "citation":"2012 Oct;7570:76-87. PMID: 25506622",
+                    "link":"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4262964/"
+                },
+                {
+                    "title":"A Framework for Longitudinal Data Analysis via Shape Regression",
+                    "citation":"2012 Feb 23;8314. Doi: 10.1117/12.911721. PMID: 24392201",
+                    "link":"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3877317/"
+                },
+                {
+                    "title":"Quantifying Regional Growth Patterns Through Longitudinal Analysis of Distances Between Multimodal MR Intensity Distributions",
+                    "citation":"Proc IEEE Int Symp Biomed Imaging. 2012:1156-1159. PMID: 23958630",
+                    "link":"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3744339/"
+                },
+                {
+                    "title":"Spatial Intensity Prior Correction for Tissue Segmentation in the Developing Human Brain",
+                    "citation":"Proc IEEE Int Symp Biomed Imaging. 2011:2049-2052. PMID: 23223157",
+                    "link":"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3515207/"
+                },
+                {
+                    "title":"Assessment of Reliability of Multi-Site Neuroimaging via Traveling Phantom Study",
+                    "citation":"Springer Verlag, Vol. 5242, Sept. 2008, pp. 263 -- 270",
+                    "link":"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2758043/"
+                },
+                {
+                    "title":"DTIPrep: Quality Control of Diffusion-Weighted Images",
+                    "citation":"Frontiers in Neuroinformatics, doi: 10.3389/fninf.2014.00004.PubMed PMID: 24523693 [PubMed] PMCID: PMC3906573 PMC3906573",
+                    "link":"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3906573/"
+                },
+                {
+                    "title":"Subject–Motion Correction in HARDI Acquisitions: Choices and Consequences",
+                    "citation":"In Frontiers in Neurology - Brain Imaging Methods, 2014, Published online, PMID 25538672 PMC4260507",
+                    "link":"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4260507/"
+                },
+                {
+                    "title":"Compressive Sensing Based Q-Space Resampling for Handling Fast Bulk Motion in High Angular Resolution Diffusion Imaging (HARDI) Acquisitions",
+                    "citation":"Proc. IEEE ISBI 2016, April 2016, DOI: 10.1109/ISBI.2016.7493412",
+                    "link":"https://ieeexplore.ieee.org/document/7493412?reload=true"
+                },
+                {
+                    "title":"A Preliminary Study on the Effect of Motion Correction on High Angular Resolution Diffusion Imaging (HARDI) Reconstruction",
+                    "citation":"2014. ISBI 2014: 1055-1058, PMID: 25356195, PMCID: PMC4209744",
+                    "link":"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4209744/"
+                },
+                {
+                    "title":"Measures for Validation of DTI Tractography",
+                    "citation":"Proc SPIE Int Soc Opt Eng. 2012 Feb 23;831, PMID: 24353381 PMCID: PMC3864930 DOI: 10.1117/12.911546",
+                    "link":"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3864930/"
+                },
+            ];
+
+            for (i = 0; i<articles.length; i++) {
+                var current = articles[i];
+                str += "<div class=\"publications-content\">";
+                str += "<h4>" + current.title + "</h4>";
+                str += "<a href=\"" + current.link.replace(/\"/g, "&quot;") + "\" target=\"_blank\">" + current.citation + "</a></br>";
+                /*console.log("Date: " + current.date);
+                console.log("Description: " + current.description);
+                console.log("Link: " + current.link);*/
+                str += "</br></br>";
+                str += "</div>"
+            }
+
+            document.getElementById("pub_id").innerHTML = str;
+        </script>
+    </body>
+</html>

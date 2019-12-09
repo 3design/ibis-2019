@@ -1,0 +1,221 @@
+/* html * {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+} */
+
+.banner {
+    grid-area: banner / banner / banner / banner;
+}
+
+.banner {
+    position: relative;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.siblings {
+    position: absolute;
+    left: -1000%;
+    right: -1000%;
+    top: -1000%;
+    bottom: -1000%;
+    min-height: 100%;
+    min-width: 100%;
+    margin: auto;
+}
+
+.banner h1 {
+    text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+    font-size: 45px !important;
+}
+
+.banner h3 {
+    text-shadow: rgb(0, 0, 0) 0px 0.5px 0.5px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-container > div {
+    flex: 1 1 0%;
+}
+
+.intro-text > div {
+    padding: 50px;
+}
+
+.intro-text p {
+    line-height: 1.75;
+    padding-top: 10px;
+}
+
+.intro-text-button {
+    padding-top: 10px;
+}
+
+.mri-scan-art-1-img {
+    background: url(images/ibis-brain-scan-1.png) center center / contain no-repeat rgb(0, 0, 0);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.mri-scan-art-1-img p {
+    color: #a5a5a5;
+}
+
+.image-text-container {
+    position: relative;
+    text-align: center;
+}
+
+.bottom-right {
+    font-size: 12px;
+    color: rgb(220, 220, 220);
+    position: absolute;
+    bottom: -10px;
+    right: 15px;
+}
+
+.bottom-left {
+    font-size: 12px;
+    color: rgb(220, 220, 220);
+    position: absolute;
+    bottom: -10px;
+    left: 15px;
+}
+
+.medium-visible-images {
+    display: none;
+}
+
+.mri-scan-art-2-img {
+    background: url(images/ibis-brain-scan-2.png) center center / contain no-repeat rgb(0, 0, 0);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.mri-scan-art-2-img p {
+    color: #D3D3D3;
+    color: #a5a5a5;
+}
+
+.study-sites {
+    height: 400px;
+    background-color: rgb(43, 48, 60);
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.study-sites-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.study-sites h1 {
+    font-size: 36px !important;
+}
+
+.flex-container-2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-container-2 img {
+    width: 80%;
+}
+
+.study-sites-content h4 {
+    line-height: 3;
+}
+
+.ibis-in-the-news {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.ibis-in-the-news h1 {
+    text-align: center;
+    color: rgb(98, 193, 183);
+    padding-bottom: 10px;
+    font-size: 36px !important;
+}
+
+.flex-container-3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.flex-container-3 > :first-child {
+    align-self: flex-start;
+    flex: 1 1 0%;
+}
+
+.flex-container-3 img {
+    width: 90%;
+}
+
+.flex-container-3:hover img {
+  opacity: 0.8;
+}
+
+.flex-container-3 > :last-child {
+    align-self: flex-start;
+    flex: 2 1 0%;
+}
+
+#banner-img {
+    width: 100%;
+    height: 380px;
+    position: relative;
+    overflow: hidden;
+}
+
+#title {
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#what-is-ibis-title {
+    color: rgb(255, 204, 20);
+}
+
+#participation-title {
+    color: rgb(37, 145, 221);
+}
+
+@media screen and (max-width: 768px) {
+	.flex-container {
+	    flex-direction: column;
+	}
+	.image-text-container {
+	    display: none;
+	}
+	.medium-visible-images {
+	    display: flex;
+	    flex-direction: row;
+	}
+	.medium-visible-images > .image-text-container {
+	    display: unset;
+	    height: 250px;
+	    flex: 1 1 0%;
+	}
+	.image-text-container {
+	    display: none;
+	}
+	.flex-container-3 > :first-child {
+	    flex: 1 1 0%;
+	}
+	.flex-container-3 > :last-child {
+	    flex: 1 1 0%;
+    }
+}
